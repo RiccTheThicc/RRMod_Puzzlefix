@@ -2653,15 +2653,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Circle"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 485.0,
-                "Name": "ShapeProbabilityWeight",
+                "Value": 940.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2671,15 +2671,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Spiral"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": "+0",
-                "Name": "ShapeProbabilityWeight",
+                "Value": 15.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2689,15 +2689,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Star"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 3.0,
-                "Name": "ShapeProbabilityWeight",
+                "Value": 6.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2707,15 +2707,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Infinity"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": "+0",
-                "Name": "ShapeProbabilityWeight",
+                "Value": 10.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2725,15 +2725,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Trefoil"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 3.0,
-                "Name": "ShapeProbabilityWeight",
+                "Value": 6.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2743,15 +2743,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Heart"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": "+0",
-                "Name": "ShapeProbabilityWeight",
+                "Value": 1.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2761,15 +2761,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Square"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 3.0,
-                "Name": "ShapeProbabilityWeight",
+                "Value": 6.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2779,15 +2779,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Pentagon"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 3.0,
-                "Name": "ShapeProbabilityWeight",
+                "Value": 8.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
@@ -2797,15 +2797,15 @@
                 "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
                 "EnumType": null,
                 "InnerType": null,
-                "Name": "ShapeProbabilityWeight",
+                "Name": "Key",
                 "DuplicationIndex": 0,
                 "IsZero": false,
                 "Value": "ERosaryShape::Triangle"
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 3.0,
-                "Name": "ShapeProbabilityWeight",
+                "Value": 6.0,
+                "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
               }
