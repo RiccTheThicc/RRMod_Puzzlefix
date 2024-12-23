@@ -6806,7 +6806,7 @@
         },
         {
           "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-          "Value": 1700.0,
+          "Value": 1770.0,
           "Name": "addedDirectionalSpeed",
           "DuplicationIndex": 0,
           "IsZero": false

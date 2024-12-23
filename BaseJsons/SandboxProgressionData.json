@@ -5550,7 +5550,7 @@
                                     "Name": "LorePageID",
                                     "DuplicationIndex": 0,
                                     "IsZero": false,
-                                    "Value": "lore2_5"
+                                    "Value": null
                                   },
                                   {
                                     "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
@@ -13765,7 +13765,7 @@
       ],
       "ObjectName": "SandboxProgressionData",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
-      "SerialSize": 39807,
+      "SerialSize": 39799,
       "SerialOffset": 4610,
       "ScriptSerializationStartOffset": 0,
       "ScriptSerializationEndOffset": 0,

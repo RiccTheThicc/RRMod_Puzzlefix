@@ -36,6 +36,8 @@ $folderReadableJsons  = "..\\ReadableJsons";
 
 $doExportFiles = true;
 $forceOnlyZone = -1;
+$forceDebugGrids = [ ];
+$forceSpawnPids = [ ];
 
 
 
@@ -89,6 +91,10 @@ if($forceOnlyZone >= 2){
 	
 	foreach($puzzleDatabase->krakenIDToWorldPuzzleData as $pid => &$ser_ref){
 		$miniJson = json_decode($ser_ref);
+		if($miniJson->PuzzleType == "ghostObject"){
+			$miniJson->forceTutorialColors = true;
+		}
+		//var_dump($miniJson); exit(1);
 		$t = UeTransformUnpack($miniJson->ActorTransform);
 		if($t->Translation->X >= $roughBounds->minX &&
 		   $t->Translation->X <= $roughBounds->maxX &&
@@ -96,9 +102,12 @@ if($forceOnlyZone >= 2){
 		   $t->Translation->Y <= $roughBounds->maxY &&
 		   //!in_array($pid, $wrongHubPids) &&
 		   (in_array($pid, GetAllHubPids()) || in_array($pid, GetAllStaticPids()))
-		   //|| ($miniJson->PuzzleType == "viewfinder" && $miniJson->Zone == 3)
+			//|| ($miniJson->PuzzleType == "lightPattern" && $miniJson->Zone == 3)
+			|| (isset($forceSpawnPids) && !empty($forceSpawnPids) && in_array($pid, $forceSpawnPids))
 		   ){
 			   $miniJson->SpawnBehaviour = 0;
+			   //printf("Enabling puzzle %d %s from %s\n", $pid, $miniJson->PuzzleType, ZoneToPretty(GetPuzzleMap(true)[$pid]->actualZoneIndex));
+			   //printf("Enabling puzzle %d %s from %s\n", $pid, $miniJson->PuzzleType, ZoneToPretty($miniJson->Zone));
 		}else{
 			$miniJson->SpawnBehaviour = 1;
 			//$miniJson->Disabled = true; // doesn't work
@@ -110,8 +119,7 @@ if($forceOnlyZone >= 2){
 	$reduced = ReduceProfileToPtypes($profileHub);
 	$gridPids = $reduced["logicGrid"] + $reduced["completeThePattern"] + $reduced["musicGrid"] + $reduced["memoryGrid"];
 	shuffle($gridPids);
-	$nextRandomPid = 0;
-	//printf("%s\n", implode(",", $gridPids));
+	$nextPidIndex = 0;
 	
 	$exports_ref = &$jsonSandboxZones->Exports;
 	$zoneContainerMap = [];
@@ -217,19 +225,20 @@ if($forceOnlyZone >= 2){
 		$jsonContainer_ref->Data[$dataIndexSerializedString]->Value = CreateJson($miniJson); //json_encode($miniJson, JSON_PRETTY_PRINT);
 		unset($miniJson);
 		
+		$actualPid = (!isset($forceDebugGrids) || empty($forceDebugGrids) ? $gridPids[$nextPidIndex] : $forceDebugGrids[$nextPidIndex % count($forceDebugGrids)]);
+		
 		$jsonContainer_ref->Data[] = (object)[
-          "\$type" => "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
-          "Name" => "desiredKrakenIDOverride",
-          "DuplicationIndex" => 0,
-          "IsZero" => false,
-          //"Value" => 232,
-		  "Value" => $gridPids[$nextRandomPid],
+			"\$type" => "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+			"Name" => "desiredKrakenIDOverride",
+			"DuplicationIndex" => 0,
+			"Value" => $actualPid,
         ];
+		//printf("Using pid %d\n", $actualPid);
 		
 		// krakenIDToPuzzleStatus ?
 		$jsonContainer_ref->Data = array_values($jsonContainer_ref->Data);
-		$puzzleDatabase->krakenIDToContainedPuzzleData[$nextRandomPid]["Status"] = "dungeon";
-		$puzzleDatabase->krakenIDToPuzzleStatus[$nextRandomPid] = "dungeon";
+		$puzzleDatabase->krakenIDToContainedPuzzleData[$actualPid]["Status"] = "dungeon";
+		$puzzleDatabase->krakenIDToPuzzleStatus[$actualPid] = "dungeon";
 		//$puzzleDatabase->krakenIDToContainedPuzzleData[232]["Status"] = "dungeon";
 		//var_dump($jsonContainer_ref); exit(1);
 		
@@ -270,7 +279,7 @@ if($forceOnlyZone >= 2){
 		}unset($element_ref);
 		
 		//printf("\n\n\n");
-		++$nextRandomPid;
+		++$nextPidIndex;
 	}unset($jsonContainer_ref);
 	ksort($runeCount);
 	//print_r($runeCount);
@@ -294,7 +303,7 @@ AdjustAssetCoordinates($puzzleDatabase, $sandboxZones, "media\\mod\\adjust_lucen
 AdjustAssetCoordinates($puzzleDatabase, $sandboxZones, "media\\mod\\adjust_autumn_falls.csv");
 AdjustAssetCoordinates($puzzleDatabase, $sandboxZones, "media\\mod\\adjust_shady_wildwoods.csv");
 AdjustAssetCoordinates($puzzleDatabase, $sandboxZones, "media\\mod\\adjust_serene_deluge.csv");
-//AdjustAssetCoordinates($puzzleDatabase, $sandboxZones, "media\\mod\\adjust_ztemp.csv");
+AdjustAssetCoordinates($puzzleDatabase, $sandboxZones, "media\\mod\\adjust_ztemp.csv");
 
 
 
@@ -447,8 +456,16 @@ $scaleTest = [
 	"10145/1/1.27",
 	"10138/1/0.8",
 	"10082/1/1.13",
-	//Autumn
-	//"6803/2/1.55",
+	"10057/2/0.85",
+	// Autumn
+	"6803/2/1.50",
+	// Shsdy
+	"8843/1/0.90",
+	"8843/2/0.85",
+	"13727/1/0.80",
+	"13727/2/0.80",
+	"8804/1/0.93",
+	"8817/1/0.92",
 ];
 foreach($scaleTest as $amalgam){
 	list($pid, $meshId, $scale) = explode("/", $amalgam);
@@ -497,6 +514,7 @@ unset($maze25027_ref); // serene broken maze, change randSeed carefully so that 
 $maze25037_ref = &$puzzleDatabase->krakenIDToContainedPuzzleData[25037]["Serialized"]; //var_dump($maze25037_ref);
 $maze25037_ref = str_replace("ew0KCSJyYW5kU2VlZCI6ID" . "Q1NDAx", "ew0KCSJyYW5kU2VlZCI6ID" . "Q1NDA0", $maze25037_ref);
 unset($maze25037_ref); // shady broken maze, change randSeed carefully so that it stays in shady
+
 
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -879,7 +879,7 @@
           "Name": "Icon",
           "DuplicationIndex": 0,
           "IsZero": false,
-          "Value": -13
+          "Value": -14
         },
         {
           "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -975,7 +975,7 @@
           "Name": "Icon",
           "DuplicationIndex": 0,
           "IsZero": false,
-          "Value": -14
+          "Value": -13
         },
         {
           "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
