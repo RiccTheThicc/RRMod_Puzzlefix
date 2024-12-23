@@ -1,5 +1,5 @@
 # RRMod_PuzzleFix
-RRMod_PuzzleFix is a .pak mod for Islands of Insight, which is a part of the "Offline Restored Mod", a community driven bugfix and QoL patch.
+RRMod_PuzzleFix is a .pak mod for Islands of Insight, which is a part of the "Offline Restored Mod", a community driven bugfix and QoL patch.  
 For the full Offline Restored Mod, this .pak mod is packaged in conjunction with a .dll mod within the releases.
 [Source code for the .dll mod](https://github.com/grechnik/islands-of-insight-fix)
 
