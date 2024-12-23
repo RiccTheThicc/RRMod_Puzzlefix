@@ -61,7 +61,7 @@ Other minor issues the mod doesn't fix:
 - Superjumps can still fail occasionally.
 
 ## Credits
-The great majority of the work on this .pak mod, especially so after the initial release, was done by Rushin', along with some help from myself.
+The great majority of the work on this .pak mod, especially so after the initial release, was done by Rushin', along with some help from myself.  
 The accompanied .dll mod, which made much of what the Offline Restored Mod does possible, was made by Meltdown.
 
 The mod would be far from what it is currently without the amazing community around Islands of Insight.
@@ -106,7 +106,6 @@ To do this, simple open the .json within UAssetGUI and save the file.
 We can then repack the .Json files using [UnrealPak](https://github.com/allcoolthingsatoneplace/UnrealPakTool).
 The asset files retain the folder structure they had when they were packed, and these locations are how the game references the assets themselves. The exact location is determined relative to the directory that the packing took place.
 In order to have our .pak replace an asset file in the game's pak on load, we need to make sure it's location is exactly the same as the one within the vanilla file.
-The folder structure within this repo is already the one the game uses, so you can simple create the asset files in the same folders the jsons and pak the folder from the correct location. Edit: This is not true for the files within the "Puzzles" folder, but this is fixed in the next version of the mod.
 
 For the version of UE Islands Of Insight was developed with, the packing itself takes place in the Engine/Binaries/Win64 folder within the project root. This results in assets having locations like "..\\..\\..\\IslandsofInsight\\Content\\...", so we pack the IslandsofInsight folder with our new assets from a folder with the same relative location. i.e. The UnrealPak.exe file used for packing is inside "Engine/Binaries/Win64" and the "IslandsofInsight" folder is in the same directory as the "Engine" folder.
 
