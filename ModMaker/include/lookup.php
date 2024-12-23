@@ -166,6 +166,7 @@ function PuzzleInternalName(string $name){
 
 function ZoneNameToInt(string $name){
 	// "VERDANT GLEN", "VerdantGlen" etc all work.
+	$name = str_replace("EMainMapZoneName::", "", $name);
 	$name = preg_replace("/\s+/", "", $name);
 	$name = strtolower($name);
 	switch($name){

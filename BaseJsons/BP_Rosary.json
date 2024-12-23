@@ -2378,7 +2378,7 @@
       "ScriptBytecodeRaw": null,
       "Field": {
         "$type": "UAssetAPI.FieldTypes.UField, UAssetAPI",
-        "Next": null
+        "Next": 0
       },
       "Data": [],
       "ObjectName": "ExecuteUbergraph_BP_Rosary",
@@ -2461,7 +2461,7 @@
       "ScriptBytecodeRaw": null,
       "Field": {
         "$type": "UAssetAPI.FieldTypes.UField, UAssetAPI",
-        "Next": null
+        "Next": 0
       },
       "Data": [],
       "ObjectName": "BP_OnSpawned",
@@ -2555,7 +2555,7 @@
       "ScriptBytecodeRaw": null,
       "Field": {
         "$type": "UAssetAPI.FieldTypes.UField, UAssetAPI",
-        "Next": null
+        "Next": 0
       },
       "Data": [
         {
@@ -2660,7 +2660,7 @@
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 940.0,
+                "Value": 957.0,
                 "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
@@ -2678,7 +2678,7 @@
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 15.0,
+                "Value": 6.0,
                 "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
@@ -2714,7 +2714,7 @@
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 10.0,
+                "Value": 6.0,
                 "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false
@@ -2786,7 +2786,7 @@
               },
               {
                 "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
-                "Value": 8.0,
+                "Value": 6.0,
                 "Name": "Value",
                 "DuplicationIndex": 0,
                 "IsZero": false

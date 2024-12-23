@@ -18,14 +18,19 @@ See [here](https://github.com/RiccTheThicc/RRMod_Puzzlefix/releases) to download
 - Superjump cooldown reduced from 300 to 60 seconds.*
 - Implemented automatic save file backups.*
 - Fixed double quest reward / negative spark bug.*
+- Sightseer images now have higher quality (no more weird artifacts).*
 - All flow orbs always display your all-time best.*
 - All glide rings remember your actual best score.*
 - Enabled more rare skydrop shapes.
+- All Verdant Glen puzzles are now mutually compatible.
+- All Lucent Waters puzzles are now mutually compatible.
+- Glide rings starting platforms now fit the environment properly (Verdant Glen and Lucent Waters).
+- Fixed two partially broken mazes (#25027, #25037).
 - Fixed the positions of all floor slabs.
 - Rotated some Autumn slabs to reduce camera/tree clipping.
 - Slightly expanded 3 floor slabs to allow for larger mazes in some cases.
 - Adjusted glide ring 10410 (last ring lowered down a tiny bit, believed to be an error).
-- Slightly adjusted positions of some hidden objects around Lucent to reduce puzzles overlapping.
+- Wanderer's Quests (automatic ones) can now be disabled (see dxgi.ini). This is an optional feature not used by default.*
 
 *Feature implemented in .dll mod. Some .dll mod features can be disabled/adjusted in dxgi.ini
 

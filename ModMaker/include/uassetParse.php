@@ -6,6 +6,8 @@ function &ParseUassetValueNode(string $type, &$node_ref){
 	
 	//if(!is_array($node_ref) || count($node_ref) != 10){ var_dump($node_ref); }
 	
+	static $error = null;
+	
 	switch($type){
 		
 		case "UAssetAPI.ExportTypes.NormalExport, UAssetAPI":
@@ -60,7 +62,6 @@ function &ParseUassetValueNode(string $type, &$node_ref){
 				if(isset($node_ref[0]->Value)){
 					return ParseUassetValueNode($node_ref[0]->{'$type'}, $node_ref[0]->Value);
 				}else{
-					static $error = null;
 					return $error;
 				}
 			}
@@ -81,7 +82,7 @@ function &ParseUassetValueNode(string $type, &$node_ref){
 					//}
 					$fieldArr[$finalSubName] = &ParseUassetValueNode($subType, $subNode_ref->Value);
 				}
-			}
+			}unset($subNode_ref);
 			//return "WHY?";
 			if(SORT_UASSET_NODES){ uksort($fieldArr, "strnatcasecmp"); }
 			return $fieldArr;
@@ -138,7 +139,7 @@ function &ParseUassetValueNode(string $type, &$node_ref){
 			return $node_ref->AssetPath->AssetName;
 		
 		case "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI":
-			return null; // ?
+			return $error; // ?
 			
 		case "UAssetAPI.PropertyTypes.Objects.MapPropertyData, UAssetAPI":
 			if(count($node_ref) == 0){

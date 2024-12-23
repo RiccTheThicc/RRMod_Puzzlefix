@@ -18,10 +18,22 @@ function LoadCsv($path, $separator = ","){
 	//printf("Loading \"%s\"... (%s)\n", $path, $separator);
 	// TODO: I love how the $separator is not used at all here
 	if(!file_exists($path)){
-		printf("[Warning] Failed to load \"%s\"\n", $path);
-		return FALSE;
+		printf("[ERROR] CSV file doesn't exist: \"%s\"\n", $path);
+		exit(1);
 	}
 	$csv = array_map("str_getcsv", file($path));
+	if(empty($csv)){
+		printf("[ERROR] Failed to load \"%s\"\n", $path);
+		exit(1);
+	}
+	// Sanity check.
+	$headerCount = count($csv[0]);
+	for($i = 1; $i < count($csv); ++$i){
+		if(count($csv[$i]) != $headerCount){
+			printf("[ERROR] Failed to load \"%s\"\nEntry #%d has %d fields, header has %d, entry:\n", $path, $i, count($csv[$i]), $headerCount, implode(",", $csv[$i]));
+			exit(1);
+		}
+	}
 	array_walk($csv, function(&$a) use ($csv) {
 		$a = array_combine($csv[0], $a);
 	});
